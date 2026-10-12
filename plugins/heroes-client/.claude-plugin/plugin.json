@@ -1,0 +1,19 @@
+{
+  "name": "heroes-client",
+  "version": "0.1.0",
+  "description": "Observe a running Heroes of the Storm client read-only with HeroesClientSDK: screens, map loading, match clock, launch results.",
+  "author": {
+    "name": "HeroesReplay",
+    "url": "https://github.com/HeroesReplay"
+  },
+  "homepage": "https://github.com/HeroesReplay/heroes-modding/tree/main/plugins/heroes-client",
+  "repository": "https://github.com/HeroesReplay/heroes-modding",
+  "license": "MIT",
+  "keywords": [
+    "heroes-of-the-storm",
+    "hots",
+    "client",
+    "memory",
+    "read-only"
+  ]
+}

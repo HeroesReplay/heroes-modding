@@ -1,0 +1,12 @@
+# Nothing from Blizzard is committed: no game files, archives, replays, dumps or extracted data.
+*.StormReplay
+*.SC2Replay
+*.mpq
+*.dmp
+*.casc
+out/
+bin/
+obj/
+.vs/
+.vscode/
+*.user

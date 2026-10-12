@@ -1,0 +1,20 @@
+{
+  "name": "storm-modding",
+  "version": "0.1.0",
+  "description": "Make Heroes of the Storm mods and custom game modes: document structure, Galaxy script, data XML, UI layouts, and replacing a built-in single-player map.",
+  "author": {
+    "name": "HeroesReplay",
+    "url": "https://github.com/HeroesReplay"
+  },
+  "homepage": "https://github.com/HeroesReplay/heroes-modding/tree/main/plugins/storm-modding",
+  "repository": "https://github.com/HeroesReplay/heroes-modding",
+  "license": "MIT",
+  "keywords": [
+    "heroes-of-the-storm",
+    "hots",
+    "stormmap",
+    "stormmod",
+    "galaxy",
+    "modding"
+  ]
+}

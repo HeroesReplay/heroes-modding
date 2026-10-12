@@ -1,0 +1,61 @@
+name: validate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  rules:
+    name: rules
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Repository rules
+        shell: pwsh
+        run: |
+          $base = if ('${{ github.event_name }}' -eq 'pull_request') { 'origin/${{ github.base_ref }}' } else { '' }
+          if ($base) { ./eng/Test-Repo.ps1 -BaseRef $base } else { ./eng/Test-Repo.ps1 }
+      - name: Agent Skills spec (skills-ref)
+        run: |
+          for d in plugins/*/skills/*/; do
+            pipx run --spec skills-ref==0.1.1 skills-ref validate "$d"
+          done
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Claude Code plugin validator
+        run: |
+          npm install -g @anthropic-ai/claude-code@2.1.286
+          claude plugin validate . --strict
+          for p in plugins/*/; do claude plugin validate "$p" --strict; done
+
+  scripts:
+    name: scripts
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Script tests
+        shell: pwsh
+        run: ./tests/Test-Scripts.ps1

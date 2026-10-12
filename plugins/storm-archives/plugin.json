@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "storm-archives",
+  "version": "0.1.0",
+  "description": "Read and build Heroes of the Storm files: MPQ archives, the installed CASC game data, and .StormReplay replays with Blizzard heroprotocol.",
+  "author": {
+    "name": "HeroesReplay",
+    "url": "https://github.com/HeroesReplay"
+  },
+  "homepage": "https://github.com/HeroesReplay/heroes-modding/tree/main/plugins/storm-archives",
+  "repository": "https://github.com/HeroesReplay/heroes-modding",
+  "license": "MIT",
+  "keywords": [
+    "heroes-of-the-storm",
+    "hots",
+    "mpq",
+    "casc",
+    "replay",
+    "heroprotocol"
+  ]
+}

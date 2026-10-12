@@ -1,0 +1,52 @@
+{
+  "name": "heroes-modding",
+  "owner": {
+    "name": "HeroesReplay"
+  },
+  "metadata": {
+    "description": "Agent skills for Heroes of the Storm modding: Storm documents, Galaxy script, data and UI XML, custom game modes, MPQ, CASC, replays and read-only client observation."
+  },
+  "plugins": [
+    {
+      "name": "storm-modding",
+      "source": "./plugins/storm-modding",
+      "description": "Make Heroes of the Storm mods and custom game modes: document structure, Galaxy script, data XML, UI layouts, and replacing a built-in single-player map.",
+      "category": "game-modding",
+      "tags": [
+        "heroes-of-the-storm",
+        "hots",
+        "stormmap",
+        "stormmod",
+        "galaxy",
+        "modding"
+      ]
+    },
+    {
+      "name": "storm-archives",
+      "source": "./plugins/storm-archives",
+      "description": "Read and build Heroes of the Storm files: MPQ archives, the installed CASC game data, and .StormReplay replays with Blizzard heroprotocol.",
+      "category": "game-modding",
+      "tags": [
+        "heroes-of-the-storm",
+        "hots",
+        "mpq",
+        "casc",
+        "replay",
+        "heroprotocol"
+      ]
+    },
+    {
+      "name": "heroes-client",
+      "source": "./plugins/heroes-client",
+      "description": "Observe a running Heroes of the Storm client read-only with HeroesClientSDK: screens, map loading, match clock, launch results.",
+      "category": "game-modding",
+      "tags": [
+        "heroes-of-the-storm",
+        "hots",
+        "client",
+        "memory",
+        "read-only"
+      ]
+    }
+  ]
+}
